@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  /* Maximalist poster / editorial theme */
+  --color-beige: #F8F4E8;
+  --color-beige-dark: #EDE8DC;
+  --color-black: #000000;
+  --color-olive: #A2B99E;
+  --color-olive-dark: #8A9A87;
+  --color-charcoal: #1A1A1A;
+  --color-gray-muted: #6B6B6B;
+  --color-white: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--color-beige);
+  --color-foreground: var(--color-black);
+  --font-display: var(--font-bebas);
+  --font-sans: var(--font-montserrat);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed navbar when scrolling to anchor links */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+body {
+  background: var(--color-beige);
+  color: var(--color-black);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Display font for headings - ensures font variable works */
+.font-display {
+  font-family: var(--font-bebas), Impact, sans-serif;
+}
