@@ -4,19 +4,37 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
-    desc: "High-performance online store with dynamic cart and checkout.",
+    title: "AgroShield — Crop Disease Detection",
+    period: "Jul 2024 – Dec 2024 · Team of 4 · Full Stack Developer",
+    stack: "Flutter · Firebase · Python · CNN",
+    details: [
+      "Shipped a farmer-first mobile app enabling real-time grape disease detection via CNN models.",
+      "Integrated cloud sync and offline-first scanning workflows to support rural usage.",
+      "Achieved 93% detection accuracy across five grape species with tailored treatment playbooks.",
+    ],
+    image: "https://images.unsplash.com/photo-1514996937319-344454492b37?w=600&q=80",
   },
   {
-    title: "SaaS Dashboard",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
-    desc: "Analytics dashboard for B2B clients with real-time charts.",
+    title: "Enterprise Resource Planning Suite",
+    period: "Feb 2025 – Apr 2025 · Solo · Full Stack Developer",
+    stack: "React · Firebase · Tailwind CSS",
+    details: [
+      "Designed a role-based ERP with six distributed modules powering 100% of client operations.",
+      "Engineered data workflows sustaining ~50k reads and ~20k writes per day with zero downtime.",
+      "Optimized architecture for seamless onboarding of ~20 users without latency or sync issues.",
+    ],
+    image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=600&q=80",
   },
   {
-    title: "Editorial Magazine",
-    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80",
-    desc: "Content-rich publication with custom typography.",
+    title: "Fashion E-Commerce Platform",
+    period: "2024 · Team of 2 · Full Stack Developer",
+    stack: "React + Vite · Node.js · MySQL · Azure",
+    details: [
+      "Delivered a full-stack ecommerce flagship with secure authentication and checkout pipelines.",
+      "Handled ₹50,000+ in first-day sales with 100% uptime and resilient scaling.",
+      "Achieved Lighthouse 100 SEO and 96 best-practice scores through meticulous optimization.",
+    ],
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80",
   },
 ];
 
@@ -38,24 +56,36 @@ export default function Projects() {
         </div>
 
         {/* Right - Stacked images with captions */}
-        <div className="flex flex-col justify-center gap-6 px-8 py-24 lg:px-12 lg:py-32">
-          {projects.map((p, i) => (
-            <div key={p.title} className="flex items-stretch gap-6">
-              <div className="relative h-32 w-40 shrink-0 overflow-hidden lg:h-40 lg:w-56">
-                <Image
-                  src={p.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="224px"
-                />
+        <div className="flex flex-col justify-center gap-10 px-8 py-24 lg:px-12 lg:py-32">
+          {projects.map((p) => (
+            <div key={p.title} className="flex flex-col gap-6 border-b border-black/10 pb-10 last:border-none">
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch">
+                <div className="relative h-32 w-full overflow-hidden lg:h-40 lg:w-56">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 220px, 80vw"
+                  />
+                </div>
+                <div className="flex-1 border-l-2 border-[#A2B99E] pl-6">
+                  <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#A2B99E]">
+                    {p.period}
+                  </span>
+                  <h3 className="mt-3 text-2xl font-semibold text-black">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.35em] text-black/60">
+                    {p.stack}
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col justify-center border-l-2 border-[#A2B99E] pl-6">
-                <span className="font-semibold tracking-wider text-black">
-                  {p.title}
-                </span>
-                <p className="mt-1 text-sm text-black/70">{p.desc}</p>
-              </div>
+              <ul className="ml-2 space-y-2 text-sm leading-relaxed text-black/80 lg:ml-64">
+                {p.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

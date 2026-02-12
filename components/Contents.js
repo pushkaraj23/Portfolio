@@ -9,7 +9,7 @@ const sections = [
   { href: "/education", label: "EDUCATION", page: "04" },
   { href: "/skills", label: "SKILLS", page: "05" },
   { href: "/projects", label: "PROJECTS", page: "06" },
-  { href: "/hobbies", label: "HOBBIES", page: "07" },
+  { href: "/languages", label: "LANGUAGES", page: "07" },
   { href: "/contact", label: "CONTACT", page: "08" },
 ];
 

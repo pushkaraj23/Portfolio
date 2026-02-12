@@ -1,61 +1,65 @@
 "use client";
 
-import Image from "next/image";
+const barcodeStyle = {
+  backgroundImage:
+    "repeating-linear-gradient(90deg, #000 0px, #000 8px, transparent 8px, transparent 12px)",
+};
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#1A1A1A]">
-      {/* Full-bleed background image with overlay */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80"
-          alt=""
-          fill
-          className="object-cover opacity-40 mix-blend-luminosity"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[#1A1A1A]/70" />
-      </div>
+    <section className="relative h-screen max-h-screen w-full overflow-hidden bg-[#1A1A1A] text-white">
+      <div className="mx-auto grid h-full max-w-7xl grid-cols-1 lg:grid-cols-[2fr,1fr]">
+        {/* Left panel */}
+        <div className="relative z-10 flex flex-col justify-between px-8 py-16 lg:px-16 lg:py-20">
+          <div className="flex items-center gap-4 text-xs font-semibold tracking-[0.6em] text-[#A2B99E] uppercase">
+            <span>PUSHKARAJ</span>
+            <span className="text-white text-sm">®</span>
+            <span className="hidden md:inline text-white/50">
+              CO-FOUNDER · LEAD WEB DEV
+            </span>
+          </div>
 
-      {/* Main content - overlapping layout */}
-      <div className="relative z-10 flex min-h-screen flex-col justify-between px-6 py-24 lg:px-12 lg:py-32">
-        <div className="flex flex-1 items-end">
-          <div className="w-full max-w-4xl">
-            {/* Giant name - partially overlaps image area */}
-            <h1 className="font-display text-[clamp(4rem,15vw,12rem)] leading-[0.85] tracking-[0.02em] text-white drop-shadow-2xl">
+          <div className="mt-8 space-y-2">
+            <h1 className="font-display text-[clamp(6rem,18vw,13rem)] leading-[0.8] uppercase">
               PUSHKARAJ
             </h1>
-            <div className="mt-4 flex flex-wrap gap-6">
-              <span className="font-display text-2xl tracking-[0.2em] text-white/90 lg:text-3xl">
-                RESUME
-              </span>
-              <span className="font-display text-2xl tracking-[0.2em] text-white/90 lg:text-3xl">
-                PRESENTATION
-              </span>
+            <p className="font-display text-[clamp(2.8rem,8vw,4.2rem)] tracking-[0.35em] text-white/80 uppercase">
+              SURYAWANSHI
+            </p>
+          </div>
+
+          <div className="mt-8 space-y-2 uppercase">
+            <p className="font-display text-4xl tracking-[0.35em] text-[#A2B99E]">
+              RESUME
+            </p>
+            <p className="text-xs font-semibold tracking-[0.4em] text-white/70">
+              CO-FOUNDER · LEAD WEB DEVELOPER · AI / ML ASPIRANT
+            </p>
+          </div>
+
+          <div className="mt-10 max-w-xl text-sm uppercase tracking-[0.25em] text-white/70">
+            Co-founder & Lead Web Developer at Fibonce Tech Solutions, Codex
+            Hackathon winner, aspiring AI-focused MS candidate dedicated to
+            building intelligent, production-ready software.
+          </div>
+
+          <div className="mt-12 flex flex-wrap gap-10 text-[0.6rem] tracking-[0.45em] uppercase text-white/60">
+            <span>PUNE · INDIA</span>
+            <span>pushkaraj232002@gmail.com</span>
+            <span>+91 9096582399</span>
+          </div>
+
+          <div className="mt-12 flex flex-wrap items-center gap-8">
+            <div className="h-12 w-48 bg-white/90" style={barcodeStyle} />
+            <div className="space-y-1 text-[0.55rem] uppercase tracking-[0.4em] text-white/50">
+              <p>SCAN · CONNECT</p>
+              <p>LINKEDIN · GITHUB</p>
             </div>
           </div>
         </div>
 
-        {/* Portrait overlapping from right - maximalist overlap */}
-        <div className="absolute right-0 top-1/2 hidden w-[45%] -translate-y-1/2 lg:block">
-          <div className="relative aspect-[3/4] w-full overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
-              alt=""
-              fill
-              className="object-cover"
-              sizes="45vw"
-            />
-          </div>
-        </div>
-
-        {/* Bottom strip - beige accent */}
-        <div className="mt-8 flex items-center justify-between border-t border-white/20 pt-6 text-xs tracking-[0.3em] text-white/60">
-          <span>Frontend Engineer & UI Architect</span>
-          <span>Portfolio 2025 · Scroll to explore</span>
-        </div>
       </div>
+      <img src="/home/hero.jpg" alt="Pushkaraj Suryawanshi" className="absolute top-0 right-0 w-1/2 h-full object-cover" />
     </section>
   );
 }

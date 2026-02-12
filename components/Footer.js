@@ -3,10 +3,10 @@
 import Image from "next/image";
 
 const contactItems = [
-  { label: "ADDRESS", value: "Your City, Country" },
-  { label: "PHONE", value: "+1 (555) 000-0000" },
-  { label: "EMAIL", value: "hello@pushkaraj.dev" },
-  { label: "WEBSITE", value: "www.pushkaraj.dev" },
+  { label: "EMAIL", value: "pushkaraj232002@gmail.com", href: "mailto:pushkaraj232002@gmail.com" },
+  { label: "PHONE", value: "+91 9096582399", href: "tel:+919096582399" },
+  { label: "LINKEDIN", value: "linkedin.com/in/pushkaraj-suryawanshi-604bba228", href: "https://www.linkedin.com/in/pushkaraj-suryawanshi-604bba228/" },
+  { label: "GITHUB", value: "github.com/pushkaraj23", href: "https://github.com/pushkaraj23" },
 ];
 
 export default function Footer() {
@@ -38,17 +38,34 @@ export default function Footer() {
                 <p className="text-xs font-semibold tracking-[0.3em] text-black/60">
                   {item.label}
                 </p>
-                <p className="mt-1 text-lg font-medium text-black">{item.value}</p>
+                <a
+                  href={item.href}
+                  className="mt-1 block text-lg font-medium text-black underline-offset-4 transition hover:underline"
+                  target={item.href?.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href?.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  {item.value}
+                </a>
               </div>
             ))}
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
-            <span className="bg-[#A2B99E] px-5 py-2 text-xs font-semibold tracking-[0.2em] text-white">
-              LINKEDIN
-            </span>
-            <span className="border border-black px-5 py-2 text-xs font-semibold tracking-[0.2em] text-black">
-              GITHUB
-            </span>
+            <a
+              href="https://www.linkedin.com/in/pushkaraj-suryawanshi-604bba228/"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-[#A2B99E] px-5 py-2 text-xs font-semibold tracking-[0.2em] text-white hover:bg-[#8A9A87]"
+            >
+              CONNECT · LINKEDIN
+            </a>
+            <a
+              href="https://github.com/pushkaraj23"
+              target="_blank"
+              rel="noreferrer"
+              className="border border-black px-5 py-2 text-xs font-semibold tracking-[0.2em] text-black hover:bg-black hover:text-white"
+            >
+              FOLLOW · GITHUB
+            </a>
           </div>
         </div>
       </div>

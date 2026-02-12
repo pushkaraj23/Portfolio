@@ -2,25 +2,34 @@
 
 import Image from "next/image";
 
-const periods = ["JAN-FEB", "MAR-APR", "JUN-JUL", "AUG-SEP"];
+const highlights = [
+  "20+ production systems deployed across India, Australia & the UK",
+  "Hiring, mentoring, and leading multidisciplinary engineer pods",
+  "Architecture through maintenance ownership for ERP, AI, and ecommerce platforms",
+  "Award-winning hackathon performer with focus on predictive analytics",
+];
+
 const experiences = [
   {
-    role: "Senior Frontend Engineer",
-    company: "Tech Company Inc.",
-    period: "2022 — Present",
-    text: "Leading frontend architecture for consumer products. Built scalable design systems.",
+    role: "Lead Web Developer & Co-Founder",
+    company: "Fibonce Tech Solutions Pvt. Ltd.",
+    period: "Aug 2025 — Present",
+    bullets: [
+      "Co-founded Fibonce Tech and built the technical division from the ground up.",
+      "Own requirement discovery, system architecture, full-stack engineering, deployment, and post-launch stability.",
+      "Delivered mission-critical ERP suites, ecommerce ecosystems, and AI-enabled applications for global clients.",
+      "Scaled operations end-to-end—from hiring and onboarding to guiding engineers toward measurable delivery.",
+    ],
   },
   {
-    role: "Frontend Developer",
-    company: "Digital Agency",
-    period: "2019 — 2022",
-    text: "Developed responsive web applications for clients across finance, retail, and media.",
-  },
-  {
-    role: "Junior Developer",
-    company: "Startup Studio",
-    period: "2017 — 2019",
-    text: "Contributed to multiple product launches. Gained expertise in React and modern CSS.",
+    role: "Website Head",
+    company: "Younoia",
+    period: "Jul 2023 — Dec 2023",
+    bullets: [
+      "Directed the web experience roadmap, ensuring performant, accessible, and brand-aligned delivery.",
+      "Recruited and mentored intern developers, instilling best practices and deployment rigor.",
+      "Led end-to-end development of the organization’s web platform with continuous improvements.",
+    ],
   },
 ];
 
@@ -34,21 +43,18 @@ export default function Experience() {
               EXPERIENCE
             </h2>
             <p className="mt-6 max-w-2xl leading-relaxed text-black/85">
-              Building digital products with a focus on user experience and
-              performance. Collaborative team player with a strong design sense.
+              Tenacious builder steering strategy, architecture, and delivery for
+              high-stakes products. From bootstrapping a tech startup to mentoring
+              teams, my craft blends business insight with deeply technical execution.
             </p>
-          </div>
 
-          {/* Period labels - black bar */}
-          <div className="mt-12 flex flex-wrap gap-2">
-            {periods.map((p) => (
-              <span
-                key={p}
-                className="bg-black px-5 py-3 text-xs font-semibold tracking-[0.2em] text-white"
-              >
-                {p}
-              </span>
-            ))}
+            <ul className="mt-10 grid gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-white">
+              {highlights.map((item) => (
+                <li key={item} className="bg-black px-5 py-3 text-left leading-relaxed">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Experience blocks */}
@@ -58,7 +64,13 @@ export default function Experience() {
                 <h3 className="font-semibold text-xl text-black">{exp.role}</h3>
                 <p className="text-[#A2B99E] font-medium">{exp.company}</p>
                 <p className="mt-1 text-sm text-black/60">{exp.period}</p>
-                <p className="mt-3 text-black/85">{exp.text}</p>
+                <ul className="mt-3 space-y-2 text-black/85">
+                  {exp.bullets.map((bullet) => (
+                    <li key={bullet} className="text-sm leading-relaxed">
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

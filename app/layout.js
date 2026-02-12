@@ -1,6 +1,7 @@
 import { Bebas_Neue, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import SiteFooter from "@/components/SiteFooter";
 
 const bebas = Bebas_Neue({
   variable: "--font-bebas",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

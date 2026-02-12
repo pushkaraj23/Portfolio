@@ -3,15 +3,27 @@
 import Image from "next/image";
 
 const technicalSkills = [
-  { label: "React / Next.js", value: 90 },
-  { label: "JavaScript", value: 92 },
-  { label: "CSS / Design", value: 85 },
-  { label: "Performance", value: 82 },
+  { label: "C / C++", value: 92 },
+  { label: "Python · Data Science", value: 90 },
+  { label: "Java · R", value: 84 },
+  { label: "JavaScript · ReactJS", value: 92 },
+  { label: "HTML · CSS · UI/UX", value: 88 },
+  { label: "Flutter · Mobile", value: 85 },
+  { label: "Firebase · Cloud", value: 86 },
+  { label: "MySQL · MongoDB", value: 88 },
+];
+
+const tools = [
+  "Git & GitHub",
+  "Machine Learning",
+  "MLOps Foundations",
+  "Arduino Programming",
 ];
 
 const languages = [
-  { lang: "English", level: "Native" },
+  { lang: "Marathi", level: "Native" },
   { lang: "Hindi", level: "Fluent" },
+  { lang: "English", level: "Professional" },
 ];
 
 export default function Skills() {
@@ -36,11 +48,11 @@ export default function Skills() {
             <span className="font-display text-4xl tracking-[0.1em] text-black">
               SKILLS
             </span>
-            <div className="mt-10 flex flex-wrap gap-8">
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {technicalSkills.map((s) => (
-                <div key={s.label} className="flex flex-col items-center">
-                  <div className="relative h-24 w-24">
-                    <svg className="h-24 w-24 -rotate-90" viewBox="0 0 36 36">
+                <div key={s.label} className="flex items-center gap-4">
+                  <div className="relative h-20 w-20">
+                    <svg className="h-20 w-20 -rotate-90" viewBox="0 0 36 36">
                       <circle
                         cx="18"
                         cy="18"
@@ -64,10 +76,20 @@ export default function Skills() {
                       {s.value}%
                     </span>
                   </div>
-                  <span className="mt-2 text-center text-xs font-medium text-black/70">
+                  <span className="text-sm font-medium leading-snug text-black/80">
                     {s.label}
                   </span>
                 </div>
+              ))}
+            </div>
+            <div className="mt-10 flex flex-wrap gap-3">
+              {tools.map((tool) => (
+                <span
+                  key={tool}
+                  className="bg-black px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+                >
+                  {tool}
+                </span>
               ))}
             </div>
           </div>
@@ -84,23 +106,22 @@ export default function Skills() {
           <div className="mt-12 space-y-8">
             <div>
               <p className="text-xs font-semibold tracking-[0.3em] text-white/60">
-                MOTHER TONGUE(S)
+                LANGUAGES KNOWN
               </p>
-              <p className="mt-2 text-white">English, Hindi</p>
-            </div>
-            <div>
-              <p className="text-xs font-semibold tracking-[0.3em] text-white/60">
-                OTHER LANGUAGE(S)
-              </p>
-              <div className="mt-4 space-y-4">
+              <div className="mt-4 space-y-4 text-white">
                 {languages.map((l) => (
-                  <div key={l.lang} className="flex items-center justify-between">
-                    <span className="text-white">{l.lang}</span>
-                    <span className="text-sm text-white/70">{l.level}</span>
+                  <div key={l.lang} className="flex items-center justify-between border-b border-white/10 pb-2">
+                    <span className="text-sm uppercase tracking-[0.3em]">
+                      {l.lang}
+                    </span>
+                    <span className="text-xs text-white/70">{l.level}</span>
                   </div>
                 ))}
               </div>
             </div>
+            <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+              COMMUNICATION · CLIENT DISCOVERY · CROSS-FUNCTIONAL LEADERSHIP
+            </p>
           </div>
         </div>
       </div>
