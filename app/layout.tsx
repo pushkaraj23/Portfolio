@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "@/components/theme-provider";
+import ThemeToggle from "@/components/theme-toggle";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,11 +16,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-screen w-screen dark antialiased`}
+      suppressHydrationWarning
+      className={`h-screen w-screen antialiased`}
     >
+
       <body className="h-full w-full flex bg-primary">
-        <nav className="w-1/9 h-full bg-accent"></nav>
-        <main className="h-full">{children}</main>
+        <Providers>
+          {/* Navbar */}
+          <nav className="w-1/9 h-full p-7">
+            <div className="h-full w-full rounded-full neu-card"></div>
+          </nav>
+          {/* Main Screen */}
+          <main className="h-full">{children}</main>
+          {/* Theme toggle button */}
+          <ThemeToggle />
+        </Providers>
       </body>
     </html>
   );

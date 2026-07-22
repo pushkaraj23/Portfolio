@@ -1,19 +1,50 @@
 @import "tailwindcss";
 
 :root {
+
+  /* theme colours */
   --primary: #ECEBE4;
   --secondary: #625D44;
   --accent: #BFB67F;
+
+  /* neumorphism shadows */
+  --shadow-light: rgba(255, 255, 255, 1);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+
+  --shadow-button-light: rgba(255, 255, 255, 1);
+  --shadow-button-dark: rgba(0, 0, 0, 0.1);
+
 }
 
 .dark {
+  /* theme colours - dark mode */
   --primary: #1c1c1c;
   --secondary: #38352F;
   --accent: #BFB67F;
+
+  /* neumorphism shadows - dark mode */
+  --shadow-light: rgba(255, 255, 255, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.35);
+
+  --shadow-button-light: rgba(255, 255, 255, 0.1);
+  --shadow-button-dark: rgba(0, 0, 0, 0.5);
+
 }
 
 @theme {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+}
+
+@utility neu-card {
+  box-shadow:
+    10px 5px 20px var(--shadow-dark),
+    -10px -5px 20px var(--shadow-light);
+}
+
+@utility neu-button {
+  box-shadow:
+    -5px -5px 10px var(--shadow-button-light),
+    5px 5px 10px var(--shadow-button-dark);
 }
