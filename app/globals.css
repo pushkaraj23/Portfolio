@@ -1,11 +1,16 @@
 @import "tailwindcss";
 
-:root {
+@theme {
+  /* fonts */
+  --font-primary: var(--font-anton);
+  --font-secondary: var(--font-manrope);
+}
 
+:root {
   /* theme colours */
-  --primary: #ECEBE4;
-  --secondary: #625D44;
-  --accent: #BFB67F;
+  --primary: #ecebe4;
+  --secondary: #625d44;
+  --accent: #bfb67f;
 
   /* neumorphism shadows */
   --shadow-light: rgba(255, 255, 255, 1);
@@ -14,13 +19,18 @@
   --shadow-button-light: rgba(255, 255, 255, 1);
   --shadow-button-dark: rgba(0, 0, 0, 0.1);
 
+  --shadow-accent-light: rgba(255, 255, 255, 1);
+  --shadow-accent-dark: rgba(0, 0, 0, 0.2);
+
+  --shadow-arrow-light: rgba(255, 255, 255, 0.3);
+  --shadow-arrow-dark: rgba(0, 0, 0, 0.2);
 }
 
 .dark {
   /* theme colours - dark mode */
   --primary: #1c1c1c;
-  --secondary: #38352F;
-  --accent: #BFB67F;
+  --secondary: #38352f;
+  --accent: #bfb67f;
 
   /* neumorphism shadows - dark mode */
   --shadow-light: rgba(255, 255, 255, 0.1);
@@ -29,6 +39,8 @@
   --shadow-button-light: rgba(255, 255, 255, 0.1);
   --shadow-button-dark: rgba(0, 0, 0, 0.5);
 
+  --shadow-accent-light: rgba(191, 182, 127, 0.35);
+  --shadow-accent-dark: rgba(0, 0, 0, 0.8);
 }
 
 @theme {
@@ -43,8 +55,54 @@
     -10px -5px 20px var(--shadow-light);
 }
 
-@utility neu-button {
+@utility neu-accent {
   box-shadow:
-    -5px -5px 10px var(--shadow-button-light),
-    5px 5px 10px var(--shadow-button-dark);
+    -10px -5px 20px var(--shadow-accent-light),
+    10px 5px 20px var(--shadow-accent-dark);
+}
+
+@layer utilities {
+  .neu-button {
+    box-shadow:
+      -5px -5px 10px var(--shadow-button-light),
+      5px 5px 10px var(--shadow-button-dark);
+
+    transition:
+      box-shadow 0.4s ease,
+      transform 0.4s ease;
+  }
+
+  .neu-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .neu-button:active {
+    transform: translateY(2px);
+
+    box-shadow:
+      inset 3px 3px 6px var(--shadow-button-dark),
+      inset -3px -3px 6px var(--shadow-button-light);
+  }
+
+  .neu-arrow-buttons {
+    box-shadow:
+      -5px -5px 10px var(--shadow-arrow-light),
+      5px 5px 10px var(--shadow-arrow-dark);
+
+    transition:
+      box-shadow 0.4s ease,
+      transform 0.4s ease;
+  }
+
+  .neu-arrow-buttons:hover {
+    transform: translateY(-1px);
+  }
+
+  .neu-arrow-buttons:active {
+    transform: translateY(2px);
+
+    box-shadow:
+      inset 3px 3px 6px var(--shadow-arrow-dark),
+      inset -3px -3px 6px var(--shadow-arrow-light);
+  }
 }
