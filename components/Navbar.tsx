@@ -19,7 +19,7 @@ export default function Navbar() {
         <nav
             onMouseEnter={() => setExpanded(true)}
             onMouseLeave={() => setExpanded(false)}
-            className={`absolute top-[4vh] left-[4vh] h-[92vh] px-4.5 py-2 flex flex-col justify-around rounded-[45px] neu-card transition-all duration-500 ease-[cubic-bezier(.34,1.56,.64,1)] overflow-hidden z-10
+            className={`absolute z-50 top-[4%] left-[4vh] h-[92%] px-4.5 py-2 flex flex-col justify-around rounded-[45px] neu-card transition-all duration-500 ease-[cubic-bezier(.34,1.56,.64,1)] overflow-hidden bg-primary
                 ${expanded ? "w-56" : "w-24"}`}
         >
             {NAV_ITEMS.map((item, index) => {
@@ -28,7 +28,7 @@ export default function Navbar() {
                     key={index}
                     href={item.href}
                     className={`
-                        flex items-center gap-3
+                        flex items-center gap-3 group
                         ${pathname === item.href
                             ? "text-accent"
                             : "text-secondary"}
@@ -39,9 +39,9 @@ export default function Navbar() {
                             ? "neu-button"
                             : ""}`
                     }>
-                        <Icon className="w-9 h-9" />
+                        <Icon className="w-9 h-9 transition-colors duration-200 group-hover:text-accent/60" />
                     </div>
-                    {expanded && <p className="font-primary text-lg tracking-wide">{item.name}</p>}
+                    {expanded && <p className="font-primary text-lg tracking-wide transition-colors duration-200 group-hover:text-accent/60">{item.name}</p>}
                 </Link>
             })}
         </nav>

@@ -10,13 +10,13 @@ export default function AppLayout({
     children: React.ReactNode;
 }) {
     return (
-        <>
+        <div className="h-full relative">
             <Navbar />
-            <main>
+            <main className="pl-[11vw] h-screen w-screen">
                 {children}
             </main>
             <ThemeToggle />
             <ArrowButtons />
-        </>
+        </div>
     );
 }

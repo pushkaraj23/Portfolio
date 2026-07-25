@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/components/theme-provider";
 import AppLayout from "@/components/AppLayout";
-import { Anton, Manrope } from "next/font/google";
+import { Anton, Manrope, Kalam } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Pushkaraj Suryawanshi",
@@ -20,6 +20,11 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 
+const kalam = Kalam({
+  weight: "400",
+  variable: "--font-kalam",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,6 +37,7 @@ export default function RootLayout({
       className={`
         ${anton.variable}
         ${manrope.variable} 
+        ${kalam.variable}
         h-screen w-screen antialiased
       `}
     >

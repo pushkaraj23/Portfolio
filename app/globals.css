@@ -4,6 +4,7 @@
   /* fonts */
   --font-primary: var(--font-anton);
   --font-secondary: var(--font-manrope);
+  --font-kalam: var(--font-kalam);
 }
 
 :root {
@@ -11,6 +12,10 @@
   --primary: #ecebe4;
   --secondary: #625d44;
   --accent: #bfb67f;
+
+  --primary-two: #1c1c1c;
+  --secondary-two: #bfb67f;
+  --accent-two: #625d44;
 
   /* neumorphism shadows */
   --shadow-light: rgba(255, 255, 255, 1);
@@ -32,6 +37,10 @@
   --secondary: #38352f;
   --accent: #bfb67f;
 
+  --primary-two: #1c1c1c;
+  --secondary-two: #38352f;
+  --accent-two: #bfb67f;
+
   /* neumorphism shadows - dark mode */
   --shadow-light: rgba(255, 255, 255, 0.1);
   --shadow-dark: rgba(0, 0, 0, 0.35);
@@ -47,6 +56,10 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+
+  --color-primary-two: var(--primary-two);
+  --color-secondary-two: var(--secondary-two);
+  --color-accent-two: var(--accent-two);
 }
 
 @utility neu-card {
