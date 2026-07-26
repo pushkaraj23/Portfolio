@@ -23,8 +23,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <img src="/hero-img.png" className="absolute h-full right-0 top-10 z-10" alt="hero image" />
-      <div className="w-[30vw] h-[30vw] bg-accent/60 absolute top-0 right-0 blur-3xl" />
+      <div className="absolute h-full right-0 top-0 -z-10">
+        <img src="/hero-img.jpg" className="h-full" alt="hero image" />
+        <div className="absolute h-full w-full inset-0 bg-linear-to-r from-primary to-primary/50" />
+      </div>
     </div>
   );
 }
