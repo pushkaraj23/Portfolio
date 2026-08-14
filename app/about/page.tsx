@@ -14,9 +14,9 @@ export default function About() {
                         <p className="font-secondary text-primary-two text-justify mt-1 opacity-55">I primarily work with the MERN stack, Firebase, and cloud platforms like AWS and Vercel, building applications that are fast, scalable, and user-focused. While I enjoy every stage of development, front-end design is where I'm most at home. There's something incredibly satisfying about transforming a concept into an intuitive, polished interface that people genuinely enjoy using.</p>
                     </div>
                     <div className="flex flex-col justify-evenly h-full">
-                        <button className="bg-primary neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-medium text-sm opacity-70">Projects</button>
-                        <button className="bg-accent neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-medium text-sm text-primary">Skills</button>
-                        <button className="bg-primary neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-medium text-sm opacity-70">Contact</button>
+                        <button className="bg-primary neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-bold text-sm opacity-70">Projects</button>
+                        <button className="bg-accent neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-bold text-sm text-primary">Skills</button>
+                        <button className="bg-primary neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-bold text-sm opacity-70">Contact</button>
                     </div>
                 </div>
                 <div className="neu-card rounded-[30px] bg-primary w-full p-8">

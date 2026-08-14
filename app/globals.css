@@ -42,8 +42,8 @@
   --accent-two: #bfb67f;
 
   /* neumorphism shadows - dark mode */
-  --shadow-light: rgba(255, 255, 255, 0.1);
-  --shadow-dark: rgba(0, 0, 0, 0.35);
+  --shadow-light: rgba(255, 255, 255, 0.07);
+  --shadow-dark: rgba(0, 0, 0, 0.40);
 
   --shadow-button-light: rgba(255, 255, 255, 0.1);
   --shadow-button-dark: rgba(0, 0, 0, 0.5);
@@ -64,8 +64,8 @@
 
 @utility neu-card {
   box-shadow:
-    10px 5px 20px var(--shadow-dark),
-    -10px -5px 20px var(--shadow-light);
+    7px 7px 20px var(--shadow-dark),
+    -7px -7px 20px var(--shadow-light);
 }
 
 @utility neu-accent {
@@ -86,7 +86,7 @@
   }
 
   .neu-button:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
 
   .neu-button:active {
@@ -94,7 +94,7 @@
 
     box-shadow:
       inset 3px 3px 6px var(--shadow-button-dark),
-      inset -3px -3px 6px var(--shadow-button-light);
+      inset -2px -2px 10px var(--shadow-button-light);
   }
 
   .neu-arrow-buttons {
