@@ -12,7 +12,7 @@ export default function AppLayout({
     return (
         <div className="h-full relative">
             <Navbar />
-            <main className="pl-[11vw] h-screen w-screen">
+            <main className="md:pl-[11vw] h-screen w-screen">
                 {children}
             </main>
             <ThemeToggle />

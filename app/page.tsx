@@ -4,10 +4,10 @@ import { FaLinkedinIn, FaInstagram } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <div className="py-10 px-5 flex flex-col justify-center h-full">
-      <h1 className="uppercase text-[15vw] leading-[15vw] font-primary text-accent-two">Pushkaraj</h1>
+    <div className="py-20 md:py-10 px-5 flex flex-col md:justify-center h-full">
+      <h1 className="max-sm:mt-10 uppercase text-[21vw] leading-[21vw] md:text-[15vw] md:leading-[15vw] font-primary text-accent-two">Pushkaraj</h1>
       <div className="flex flex-col items-end w-fit relative z-0">
-        <h1 className="uppercase text-[10vw] leading-[10vw] font-primary text-secondary-two">Suryawanshi</h1>
+        <h1 className="uppercase text-[15vw] leading-[15vw] md:text-[10vw] md:leading-[10vw] font-primary text-secondary-two">Suryawanshi</h1>
         <h2 className="font-kalam text-6xl absolute -right-10 bottom-0 bg-linear-to-t from-transparent via-accent-two/60 to-accent-two py-3 px-3 bg-clip-text text-transparent">
           पुष्कराज सूर्यवंशी
         </h2>
@@ -23,9 +23,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="absolute h-full right-0 top-0 -z-10">
+      <div className="absolute md:h-full right-0 bottom-0 -z-10">
         <img src="/hero-img.jpg" className="h-full" alt="hero image" />
-        <div className="absolute h-full w-full inset-0 bg-linear-to-r from-primary to-primary/50" />
+        {/* <div className="absolute h-full w-full inset-0 bg-linear-to-r from-primary to-primary/50" /> */}
       </div>
     </div>
   );
