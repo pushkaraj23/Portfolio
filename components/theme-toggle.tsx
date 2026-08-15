@@ -35,7 +35,7 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="absolute z-50 right-5 top-5 w-20 rounded-full bg-primary neu-button p-2 overflow-hidden hover:cursor-pointer"
+            className="fixed z-50 right-5 top-5 w-20 rounded-full bg-primary neu-button p-2 overflow-hidden hover:cursor-pointer"
         >
             <div className={`rounded-full bg-accent p-2 w-fit transition-transform duration-300 ease-[cubic-bezier(.34,1.56,.64,1)]
                 ${isDark ? "translate-x-6" : "translate-x-0"}`}>

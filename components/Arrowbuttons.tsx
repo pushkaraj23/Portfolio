@@ -33,7 +33,7 @@ export default function ArrowButtons() {
         router.push(NAV_ITEMS[previousIndex].href);
     };
     return (
-        <div className="p-2.5 neu-accent absolute z-50 bottom-5 right-5 rounded-full bg-accent flex flex-col gap-2">
+        <div className="p-2.5 neu-accent fixed z-50 bottom-5 right-5 rounded-full bg-accent flex flex-col gap-2">
             <button onClick={previous} className="p-2 rounded-full bg-accent neu-arrow-buttons hover:cursor-pointer"><ChevronUp className="text-[#1c1c1c]" strokeWidth={3} /></button>
             <button onClick={next} className="p-2 rounded-full bg-accent neu-arrow-buttons hover:cursor-pointer"><ChevronDown className="text-[#1c1c1c]" strokeWidth={3} /></button>
         </div>

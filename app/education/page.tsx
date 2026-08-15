@@ -33,11 +33,10 @@ export default function EducationPage() {
     ];
 
     return (
-        <div className="h-full">
-            <section className="relative h-[75%]">
+        <div className="h-full max-sm:pt-16">
+            <section className="relative h-[78%]">
 
-                {/* Scrollable content */}
-                <div className="h-full overflow-y-scroll flex flex-col gap-8  pl-6 pr-10 py-10">
+                <div className="h-full overflow-y-scroll flex flex-col gap-8 px-6 md:pl-6 md:pr-10 py-10">
                     {education.map((data, index) => (
                         <div
                             key={index}
@@ -53,7 +52,7 @@ export default function EducationPage() {
                                 </h2>
                             </div>
 
-                            <div className="flex gap-6 pt-5 px-5">
+                            <div className="flex gap-6 pt-7 px-5">
                                 <div className="flex gap-2">
                                     <div className="bg-accent neu-accent h-full rounded-full w-2" />
 
@@ -74,16 +73,15 @@ export default function EducationPage() {
                     ))}
                 </div>
 
-                {/* Fixed to section */}
                 <div className="absolute bottom-0 left-0 w-full h-[15vh] bg-linear-to-t from-primary to-primary/0 pointer-events-none" />
 
             </section>
-            <section className="bg-primary px-6 py-2 overflow-hidden flex items-center gap-5">
-                <h1 className="uppercase text-accent text-9xl h-fit font-primary">Education</h1>
-                <div className="p-4 flex gap-4 h-full items-center">
-                    <div className="flex flex-col gap-4 justify-center">
+            <section className="bg-primary px-6 py-2 overflow-hidden flex max-sm:flex-col md:items-center gap-5">
+                <h1 className="uppercase text-accent text-7xl md:text-9xl h-fit font-primary">Education</h1>
+                <div className="md:p-4 flex gap-4 h-full items-center">
+                    <div className="flex md:flex-col gap-4 justify-center">
                         <button className="bg-accent neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-bold text-sm text-primary">Skills</button>
-                        <button className="bg-primary neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-bold text-sm opacity-70">Contact</button>
+                        <button className="bg-primary hidden md:block neu-button px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-bold text-sm opacity-70">Contact</button>
                     </div>
                     <button className="bg-primary neu-button h-fit px-5 py-3 rounded-full font-secondary hover:cursor-pointer font-bold text-sm opacity-70">Projects</button>
                 </div>

@@ -25,9 +25,9 @@ export default function Home() {
       </div>
 
       <div className="md:hidden flex flex-col w-fit mt-10 gap-5">
-        <button className="neu-button p-4 rounded-full hover:cursor-pointer"><MdEmail className="w-8 h-8 text-accent" /></button>
-        <button className="neu-button p-4 rounded-full hover:cursor-pointer"><FaLinkedinIn className="w-8 h-8 text-accent" /></button>
-        <button className="neu-button p-4 rounded-full hover:cursor-pointer"><FaInstagram className="w-8 h-8 text-accent" /></button>
+        <button className="neu-button p-4 w-fit rounded-full hover:cursor-pointer ml-24"><MdEmail className="w-8 h-8 text-accent" /></button>
+        <button className="neu-button p-4 w-fit rounded-full hover:cursor-pointer ml-16"><FaLinkedinIn className="w-8 h-8 text-accent" /></button>
+        <button className="neu-button p-4 w-fit rounded-full hover:cursor-pointer ml-2"><FaInstagram className="w-8 h-8 text-accent" /></button>
       </div>
 
       <div className="absolute md:h-full right-0 bottom-0 -z-10">
