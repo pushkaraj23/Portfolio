@@ -34,19 +34,11 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`
-        ${anton.variable}
-        ${manrope.variable} 
-        ${kalam.variable}
-        h-screen w-screen antialiased
-      `}
+      className={` ${anton.variable} ${manrope.variable} ${kalam.variable} h-screen w-screen antialiased`}
     >
-
-      <body className="h-full w-full bg-primary">
+      <body className="bg-primary h-full w-full">
         <Providers>
-          <AppLayout>
-            {children}
-          </AppLayout>
+          <AppLayout>{children}</AppLayout>
         </Providers>
       </body>
     </html>

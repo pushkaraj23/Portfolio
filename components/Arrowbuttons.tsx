@@ -15,27 +15,33 @@ export default function ArrowButtons() {
     const pathname = usePathname();
     const router = useRouter();
 
-    const currentIndex = NAV_ITEMS.findIndex(
-        item => item.href === pathname
-    );
+    const currentIndex = NAV_ITEMS.findIndex((item) => item.href === pathname);
 
     const next = () => {
         const nextIndex = (currentIndex + 1) % NAV_ITEMS.length;
 
         router.push(NAV_ITEMS[nextIndex].href);
     };
-    
+
     const previous = () => {
-        const previousIndex =
-            (currentIndex - 1 + NAV_ITEMS.length) %
-            NAV_ITEMS.length;
+        const previousIndex = (currentIndex - 1 + NAV_ITEMS.length) % NAV_ITEMS.length;
 
         router.push(NAV_ITEMS[previousIndex].href);
     };
     return (
-        <div className="p-2.5 neu-accent fixed z-50 bottom-5 right-5 rounded-full bg-accent flex flex-col gap-2">
-            <button onClick={previous} className="p-2 rounded-full bg-accent neu-arrow-buttons hover:cursor-pointer"><ChevronUp className="text-[#1c1c1c]" strokeWidth={3} /></button>
-            <button onClick={next} className="p-2 rounded-full bg-accent neu-arrow-buttons hover:cursor-pointer"><ChevronDown className="text-[#1c1c1c]" strokeWidth={3} /></button>
+        <div className="neu-accent bg-accent fixed right-5 bottom-5 z-50 flex flex-col gap-2 rounded-full p-2.5">
+            <button
+                onClick={previous}
+                className="bg-accent neu-arrow-buttons rounded-full p-2 hover:cursor-pointer"
+            >
+                <ChevronUp className="text-[#1c1c1c]" strokeWidth={3} />
+            </button>
+            <button
+                onClick={next}
+                className="bg-accent neu-arrow-buttons rounded-full p-2 hover:cursor-pointer"
+            >
+                <ChevronDown className="text-[#1c1c1c]" strokeWidth={3} />
+            </button>
         </div>
     );
 }

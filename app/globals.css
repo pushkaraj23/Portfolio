@@ -43,7 +43,7 @@
 
   /* neumorphism shadows - dark mode */
   --shadow-light: rgba(255, 255, 255, 0.07);
-  --shadow-dark: rgba(0, 0, 0, 0.40);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
 
   --shadow-button-light: rgba(255, 255, 255, 0.1);
   --shadow-button-dark: rgba(0, 0, 0, 0.5);

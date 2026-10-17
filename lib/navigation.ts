@@ -1,11 +1,4 @@
-import {
-  HiHome,
-  HiUser,
-  HiBriefcase,
-  HiAcademicCap,
-  HiFolder,
-  HiEnvelope,
-} from "react-icons/hi2";
+import { HiHome, HiUser, HiBriefcase, HiAcademicCap, HiFolder, HiEnvelope } from "react-icons/hi2";
 import { FaBrain } from "react-icons/fa6";
 
 export const NAV_ITEMS = [
