@@ -2,9 +2,10 @@
 
 @theme {
   /* fonts */
-  --font-primary: var(--font-anton);
-  --font-secondary: var(--font-manrope);
+  --font-primary: var(--font-oswald);
+  --font-secondary: var(--font-josefin);
   --font-kalam: var(--font-kalam);
+  --font-italic: var(--font-dancing);
 }
 
 :root {

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { NAV_ITEMS } from "@/lib/navigation";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
     const [expanded, setExpanded] = useState(false);
@@ -63,7 +62,7 @@ export default function Navbar() {
             <nav
                 onMouseEnter={() => setExpanded(true)}
                 onMouseLeave={() => setExpanded(false)}
-                className={`neu-card bg-primary absolute top-[3%] left-[4vh] z-50 hidden h-[94%] flex-col justify-around overflow-hidden rounded-[45px] px-4.5 py-2 transition-all duration-500 ease-[cubic-bezier(.34,1.56,.64,1)] md:flex ${expanded ? "w-52" : "w-24"} `}
+                className={`neu-card bg-primary absolute top-[3%] left-[3vh] z-50 hidden h-[94%] flex-col justify-around overflow-hidden rounded-[45px] px-4.5 py-2 transition-all duration-500 ease-[cubic-bezier(.34,1.56,.64,1)] md:flex ${expanded ? "w-56" : "w-24"} `}
             >
                 {NAV_ITEMS.map((item, index) => {
                     const Icon = item.icon;
@@ -78,7 +77,7 @@ export default function Navbar() {
                             <Icon className="group-hover:text-accent/60 h-9 w-9 transition-colors duration-200" />
 
                             {expanded && (
-                                <p className="font-primary group-hover:text-accent/60 text-lg tracking-wide transition-colors duration-200">
+                                <p className="font-primary font-bold group-hover:text-accent/60 text-lg tracking-wide transition-colors duration-200">
                                     {item.name}
                                 </p>
                             )}
