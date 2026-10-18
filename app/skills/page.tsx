@@ -1,4 +1,71 @@
 "use client";
+import { useEffect, useRef } from "react";
+
+type Skill = { name: string; image: string };
+type Category = { category: string; items: Skill[] };
+
+function SkillRow({ doc, index }: { doc: Category; index: number }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
+  const dirRef = useRef(1); // 1 = right, -1 = left
+
+  const stop = () => {
+    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    rafRef.current = null;
+  };
+
+  const start = () => {
+    const el = scrollRef.current;
+    if (!el || rafRef.current !== null) return;
+
+    const step = () => {
+      const max = el.scrollWidth - el.clientWidth;
+      if (max <= 0) return; // nothing to scroll
+
+      el.scrollLeft += dirRef.current * 1; // speed: px per frame
+      if (el.scrollLeft >= max - 1) dirRef.current = -1;
+      else if (el.scrollLeft <= 0) dirRef.current = 1;
+
+      rafRef.current = requestAnimationFrame(step);
+    };
+    rafRef.current = requestAnimationFrame(step);
+  };
+
+  const handleLeave = () => {
+    stop();
+    dirRef.current = 1;
+    scrollRef.current?.scrollTo({ left: 0, behavior: "smooth" }); // optional: reset
+  };
+
+  useEffect(() => stop, []); // cleanup on unmount
+
+  const even = index % 2 === 0;
+
+  return (
+    <div
+      onMouseEnter={start}
+      onMouseLeave={handleLeave}
+      className={`flex items-center gap-4 ${even ? "bg-primary neu-card flex-row" : "bg-accent neu-accent flex-row-reverse"} rounded-4xl px-8 py-5`}
+    >
+      <div className={`font-primary font-bold uppercase px-8 py-6 whitespace-nowrap neu-card rounded-4xl ${even ? "text-accent" : "text-primary"}`}>
+        {doc.category}
+      </div>
+      <div className={`h-full w-0.5 rounded-full ${even ? "bg-accent" : "bg-primary"}`} />
+
+      <div className="relative flex w-full overflow-hidden">
+        <div ref={scrollRef} className="flex w-full h-full overflow-x-scroll hide-scrollbar gap-12">
+          {doc.items.map((item) => (
+            <div key={item.name} className="flex flex-col justify-center items-center gap-3">
+              <img src={item.image} alt={item.name} className="min-w-12 h-12 object-cover" />
+              <p className={`${even ? "text-accent" : "text-primary"} font-secondary whitespace-nowrap`}>{item.name}</p>
+            </div>
+          ))}
+        </div>
+        <div className={`h-full min-w-40 bg-linear-to-l ${even ? "from-primary to-primary/0" : "from-accent to-accent/0"} absolute right-0 pointer-events-none`} />
+      </div>
+    </div>
+  );
+}
 
 export default function SkillsPage() {
 
@@ -73,10 +140,7 @@ export default function SkillsPage() {
     {/* Page Content */}
     <section className="grid grid-cols-1 gap-10 mt-12">
       {skills.map((doc, index) => (
-        <div key={doc.category} className={`flex gap-4 ${index % 2 === 0 ? "bg-primary neu-card flex-row" : "bg-accent neu-accent flex-row-reverse"} rounded-4xl p-8`}>
-          <div className={`font-primary font-bold uppercase px-8 py-6 neu-card rounded-4xl ${index % 2 === 0 ? "text-accent" : "text-primary"}`}>{doc.category}</div>
-          <div className={`h-full w-0.5 rounded-full ${index % 2 === 0 ? "bg-accent" : "bg-primary"}`} />
-        </div>
+        <SkillRow key={doc.category} doc={doc} index={index} />
       ))}
     </section>
   </ div>;
