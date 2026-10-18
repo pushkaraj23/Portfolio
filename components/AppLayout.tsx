@@ -8,7 +8,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="relative h-full">
             <Navbar />
-            <main className="h-screen w-screen md:pl-[10vw]">{children}</main>
+            <main className="h-screen w-[95vw] overflow-x-hidden hide-scrollbar md:pl-[9.5vw]">{children}</main>
             <ThemeToggle />
             <SideBar />
         </div>

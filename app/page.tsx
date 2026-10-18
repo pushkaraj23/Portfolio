@@ -4,7 +4,7 @@ import { FaLinkedinIn, FaInstagram } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <div className="flex h-full flex-col px-8 md:p-5">
+    <div className="flex h-full flex-col px-10 md:p-5">
       {/* Name block */}
       <h1 className="font-primary text-accent-two uppercase font-bold text-[25vh] leading-[25vh]">
         Pushkaraj
