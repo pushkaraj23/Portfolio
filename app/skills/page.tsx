@@ -50,8 +50,8 @@ function SkillRow({ doc, index }: { doc: Category; index: number }) {
       }`}
     >
       <div
-        className={`font-primary neu-card shrink-0 rounded-3xl px-5 py-4 text-center text-xl font-bold whitespace-nowrap uppercase sm:rounded-4xl sm:px-8 sm:py-5 sm:text-2xl md:py-6 md:text-base ${
-          even ? "text-accent" : "text-primary"
+        className={`font-primary shrink-0 rounded-3xl px-5 py-4 text-center text-xl font-bold whitespace-nowrap uppercase sm:rounded-4xl sm:px-8 sm:py-5 sm:text-2xl md:py-6 md:text-base ${
+          even ? "text-accent neu-card" : "text-primary neu-accent-two"
         }`}
       >
         {doc.category}

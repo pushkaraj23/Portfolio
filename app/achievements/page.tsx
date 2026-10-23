@@ -75,7 +75,7 @@ export default function AchievementsPage() {
               <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
               <div className="absolute inset-0 h-full w-full bg-linear-to-b from-primary/0 to-primary" />
               <div className="absolute bottom-0 left-0 w-full px-4 py-4 sm:px-5 sm:py-5">
-                <h1 className="type-card-title text-accent normal-case">{item.title}</h1>
+                <h1 className="type-card-title text-accent-two normal-case">{item.title}</h1>
                 <h3 className="type-meta mt-1">{item.subtitle}</h3>
               </div>
             </div>

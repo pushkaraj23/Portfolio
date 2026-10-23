@@ -47,7 +47,7 @@ export default function SideBar() {
                 </div>
 
                 {/* Arrow Buttons */}
-                <div className="neu-accent bg-accent flex flex-col items-center justify-center gap-2 rounded-t-full p-3 sm:p-4">
+                <div className="neu-accent-two bg-accent flex flex-col items-center justify-center gap-2 rounded-t-full p-3 sm:p-4">
                     <button
                         onClick={previous}
                         aria-label="Previous page"

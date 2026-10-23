@@ -53,7 +53,7 @@ export default function ExperiencePage() {
                   <h1 className="type-card-title text-accent">{doc.title}</h1>
                   <p className="type-meta uppercase">{doc.organization}</p>
                 </div>
-                <div className="bg-secondary-two text-accent font-secondary absolute right-0 bottom-0 rounded-tl-3xl px-3 py-1.5 text-xs sm:rounded-tl-4xl sm:px-5 sm:py-2 sm:text-sm">
+                <div className="bg-secondary-two text-accent-two font-secondary absolute right-0 bottom-0 rounded-tl-3xl px-3 py-1.5 text-xs sm:rounded-tl-4xl sm:px-5 sm:py-2 sm:text-sm">
                   {doc.from} - {doc.until}
                 </div>
               </div>

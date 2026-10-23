@@ -90,7 +90,7 @@ export default function About() {
           alt="about-me-photo"
         />
         <div className="bg-accent neu-accent rounded-3xl p-5 sm:rounded-4xl sm:p-6">
-          <div className="bg-accent neu-card-dynamic flex w-fit items-center gap-3 rounded-full px-5 py-2.5 sm:px-6 sm:py-3">
+          <div className="bg-accent neu-accent-two flex w-fit items-center gap-3 rounded-full px-5 py-2.5 sm:px-6 sm:py-3">
             <div className="bg-primary m h-6 w-2 rounded-full sm:h-8" />
             <h2 className="font-primary text-primary text-lg font-bold sm:text-2xl">How I Got Here</h2>
           </div>
