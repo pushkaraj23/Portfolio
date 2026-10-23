@@ -67,7 +67,7 @@ function SkillRow({ doc, index }: { doc: Category; index: number }) {
           <div key={item.name} className="flex flex-col items-center justify-start gap-2 text-center">
             <img src={item.image} alt={item.name} className="h-10 w-10 object-contain" />
             <p
-              className={`${even ? "text-accent" : "text-primary"} font-secondary text-[11px] leading-tight`}
+              className={`${even ? "text-accent" : "text-primary"} font-secondary text-xs leading-tight sm:text-sm`}
             >
               {item.name}
             </p>
@@ -166,12 +166,10 @@ export default function SkillsPage() {
   ];
 
   return (
-    <div className="px-5 pt-24 pb-10 sm:px-8 md:px-10 md:py-8">
+    <div className="page-shell">
       {/* Header */}
       <div className="flex items-end gap-3 sm:gap-5">
-        <h1 className="font-primary text-accent shrink-0 text-[clamp(2.75rem,12vw,15vh)] leading-none font-bold uppercase">
-          Skills
-        </h1>
+        <h1 className="type-page-title text-accent shrink-0">Skills</h1>
         <div className="bg-accent h-px w-full" />
       </div>
 

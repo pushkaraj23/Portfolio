@@ -25,12 +25,10 @@ export default function ProjectsPage() {
   }, [selected]);
 
   return (
-    <div className="px-8 pt-24 pb-10 sm:px-10 md:px-10 md:py-8">
+    <div className="page-shell">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:gap-5 md:flex-row md:items-end">
-        <h1 className="font-primary text-accent shrink-0 text-[clamp(2.75rem,11vw,15vh)] leading-none font-bold uppercase">
-          Projects
-        </h1>
+        <h1 className="type-page-title text-accent shrink-0">Projects</h1>
         <div className="flex w-full items-center gap-3 md:items-end md:gap-5">
           <div className="neu-card-inverse flex min-w-0 flex-1 items-center gap-2 rounded-full px-4 py-2.5 sm:gap-3 sm:px-6 sm:py-3 md:flex-none">
             <input
@@ -62,10 +60,8 @@ export default function ProjectsPage() {
               />
               <div className="absolute top-0 left-0 h-full w-full bg-linear-to-b from-primary/0 to-primary" />
             </div>
-            <h1 className="font-primary text-accent mt-3 text-2xl font-semibold uppercase sm:text-3xl">
-              {doc.title}
-            </h1>
-            <p className="font-secondary mt-2 flex-1 text-sm opacity-60 sm:text-base">{doc.description}</p>
+            <h1 className="type-card-title text-accent mt-3">{doc.title}</h1>
+            <p className="type-body-muted mt-2 flex-1">{doc.description}</p>
             <div className="mt-3 flex flex-wrap gap-3 p-2 sm:mt-4 sm:gap-4">
               {doc.tags.map((item, index) => (
                 <div key={index} className="neu-card-dynamic shrink-0 rounded-full px-4 py-2 sm:px-5 sm:py-3">
@@ -118,9 +114,7 @@ export default function ProjectsPage() {
                 </h1>
                 <div className="bg-accent hidden h-px w-full sm:block" />
               </div>
-              <p className="font-secondary mt-4 max-w-3xl text-sm opacity-60 sm:text-base">
-                {selected.tagline}
-              </p>
+              <p className="type-body-muted mt-4 max-w-3xl">{selected.tagline}</p>
 
               {/* Cover image */}
               <img
@@ -153,26 +147,20 @@ export default function ProjectsPage() {
               <div className="bg-accent/30 my-8 h-px w-full sm:my-12" />
 
               {/* Overview */}
-              <h2 className="font-primary text-accent text-2xl font-semibold uppercase sm:text-3xl">
-                Overview
-              </h2>
-              <p className="font-secondary mt-3 max-w-4xl text-base leading-relaxed opacity-60 sm:text-lg">
-                {selected.overview}
-              </p>
+              <h2 className="type-section-title text-accent">Overview</h2>
+              <p className="type-body-muted mt-3 max-w-4xl">{selected.overview}</p>
 
               <div className="bg-accent/30 my-8 h-px w-full sm:my-12" />
 
               {/* Features */}
-              <h2 className="font-primary text-accent text-2xl font-semibold uppercase sm:text-3xl">
-                Key Features
-              </h2>
+              <h2 className="type-section-title text-accent">Key Features</h2>
               <ul className="mt-4 grid gap-3 sm:mt-5 sm:gap-4 md:grid-cols-2">
                 {selected.features.map((f) => (
                   <li key={f} className="font-secondary flex items-center gap-3 sm:gap-4">
                     <span className="neu-button mt-0.5 shrink-0 rounded-full p-2">
                       <FaCheck className="text-accent h-3 w-3" />
                     </span>
-                    <span className="text-sm opacity-80 sm:text-base">{f}</span>
+                    <span className="type-body opacity-80">{f}</span>
                   </li>
                 ))}
               </ul>
@@ -180,9 +168,7 @@ export default function ProjectsPage() {
               <div className="bg-accent/30 my-8 h-px w-full sm:my-12" />
 
               {/* Tech stack */}
-              <h2 className="font-primary text-accent text-2xl font-semibold uppercase sm:text-3xl">
-                Tech Stack
-              </h2>
+              <h2 className="type-section-title text-accent">Tech Stack</h2>
               <div className="mt-4 grid gap-6 sm:mt-5 sm:gap-8 md:grid-cols-2">
                 {Object.entries(selected.techStack).map(([group, items]) => (
                   <div key={group}>
@@ -206,9 +192,7 @@ export default function ProjectsPage() {
               <div className="bg-accent/30 my-8 h-px w-full sm:my-12" />
 
               {/* Challenges */}
-              <h2 className="font-primary text-accent text-2xl font-semibold uppercase sm:text-3xl">
-                Challenges & Solutions
-              </h2>
+              <h2 className="type-section-title text-accent">Challenges & Solutions</h2>
               <div className="mt-4 grid gap-4 sm:mt-5 sm:gap-6 md:grid-cols-2">
                 {selected.challenges.map((c, i) => (
                   <div key={i} className="neu-card rounded-3xl p-5 sm:rounded-4xl sm:p-7">
@@ -216,9 +200,9 @@ export default function ProjectsPage() {
                       <span className="font-secondary text-accent font-bold uppercase">
                         Challenge :{" "}
                       </span>
-                      <p className="font-secondary text-accent text-sm sm:text-base">{c.problem}</p>
+                      <p className="type-body text-accent">{c.problem}</p>
                     </div>
-                    <p className="font-secondary mt-4 px-2 text-sm opacity-60 sm:mt-5 sm:px-4 sm:text-base">
+                    <p className="type-body-muted mt-4 px-2 sm:mt-5 sm:px-4">
                       <span className="font-bold uppercase">Solution : </span>
                       <br />
                       {c.solution}
@@ -230,9 +214,7 @@ export default function ProjectsPage() {
               <div className="bg-accent/30 my-8 h-px w-full sm:my-12" />
 
               {/* Results */}
-              <h2 className="font-primary text-accent text-2xl font-semibold uppercase sm:text-3xl">
-                Results
-              </h2>
+              <h2 className="type-section-title text-accent">Results</h2>
               <div className="mt-4 grid grid-cols-2 gap-3 sm:mt-5 sm:gap-6 md:grid-cols-3">
                 {selected.results.map((r) => (
                   <div
@@ -250,9 +232,7 @@ export default function ProjectsPage() {
               <div className="bg-accent/30 my-8 h-px w-full sm:my-12" />
 
               {/* Gallery */}
-              <h2 className="font-primary text-accent text-2xl font-semibold uppercase sm:text-3xl">
-                Gallery
-              </h2>
+              <h2 className="type-section-title text-accent">Gallery</h2>
               <div className="hide-scrollbar -mx-2 mt-4 flex gap-4 overflow-x-auto p-2 sm:mt-5 sm:gap-6">
                 {selected.gallery.map((src, i) => (
                   <img

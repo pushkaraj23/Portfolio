@@ -23,12 +23,10 @@ export default function ExperiencePage() {
   ];
 
   return (
-    <div className="px-5 pt-24 pb-10 sm:px-8 md:px-10 md:py-8">
+    <div className="page-shell">
       {/* Header */}
       <div className="flex items-end gap-3 sm:gap-5">
-        <h1 className="font-primary text-accent shrink-0 text-[clamp(2.25rem,9vw,15vh)] leading-none font-bold uppercase">
-          Experience
-        </h1>
+        <h1 className="type-page-title text-accent shrink-0">Experience</h1>
         <div className="bg-accent h-px w-full" />
       </div>
 
@@ -52,12 +50,8 @@ export default function ExperiencePage() {
               <div className="neu-card relative flex w-full gap-3 overflow-hidden rounded-3xl px-4 py-4 pb-10 sm:gap-4 sm:rounded-4xl sm:px-7 sm:py-5 sm:pb-7">
                 <div className="bg-accent neu-accent h-auto min-h-full w-1.5 shrink-0 rounded-full sm:w-2" />
                 <div className="min-w-0 pr-2">
-                  <h1 className="font-primary text-accent text-lg font-semibold uppercase sm:text-2xl">
-                    {doc.title}
-                  </h1>
-                  <p className="font-secondary text-xs uppercase opacity-60 sm:text-sm">
-                    {doc.organization}
-                  </p>
+                  <h1 className="type-card-title text-accent">{doc.title}</h1>
+                  <p className="type-meta uppercase">{doc.organization}</p>
                 </div>
                 <div className="bg-secondary-two text-accent font-secondary absolute right-0 bottom-0 rounded-tl-3xl px-3 py-1.5 text-xs sm:rounded-tl-4xl sm:px-5 sm:py-2 sm:text-sm">
                   {doc.from} - {doc.until}
@@ -66,7 +60,7 @@ export default function ExperiencePage() {
 
               <div className="neu-card-inverse h-full rounded-3xl p-4 sm:rounded-4xl sm:p-6">
                 <p
-                  className="font-secondary text-xs whitespace-pre-wrap opacity-60 sm:text-sm"
+                  className="type-body-muted whitespace-pre-wrap"
                   dangerouslySetInnerHTML={{ __html: doc.description }}
                 />
               </div>

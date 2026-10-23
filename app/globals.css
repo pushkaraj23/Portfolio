@@ -175,3 +175,110 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, newer Edge */
 }
+
+/* Consistent type scale — especially for mobile */
+@layer utilities {
+  /* Shared page padding — mobile + desktop */
+  .page-shell {
+    width: 100%;
+    padding-left: 1.25rem; /* px-5 */
+    padding-right: 1.25rem;
+    padding-top: 6rem; /* pt-24 — clears mobile hamburger */
+    padding-bottom: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .page-shell {
+      padding-left: 2rem; /* sm:px-8 */
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .page-shell {
+      padding-left: 2.5rem; /* md:px-10 */
+      padding-right: 2.5rem;
+      padding-top: 2rem; /* md:py-8 */
+      padding-bottom: 2rem;
+    }
+  }
+
+  /* Page hero titles: Skills, Projects, Experience, etc. */
+  .type-page-title {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: clamp(2.85rem, 11.5vw, 15vh);
+  }
+
+  /* Secondary word next to a page title (e.g. "Me" in About Me) */
+  .type-page-title-sm {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: clamp(1.65rem, 7vw, 10vh);
+  }
+
+  /* Card / item titles */
+  .type-card-title {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.25rem; /* text-xl */
+    line-height: 1.25;
+  }
+
+  @media (min-width: 640px) {
+    .type-card-title {
+      font-size: 1.5rem; /* sm:text-2xl */
+    }
+  }
+
+  /* Section titles inside content (e.g. project modal) */
+  .type-section-title {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.5rem; /* text-2xl */
+    line-height: 1.2;
+  }
+
+  @media (min-width: 640px) {
+    .type-section-title {
+      font-size: 1.875rem; /* sm:text-3xl */
+    }
+  }
+
+  /* Body paragraphs */
+  .type-body {
+    font-family: var(--font-secondary);
+    font-weight: 300;
+    font-size: 1rem; /* text-base */
+    line-height: 1.625;
+  }
+
+  @media (min-width: 640px) {
+    .type-body {
+      font-size: 1rem;
+    }
+  }
+
+  /* Muted body (descriptions under cards) */
+  .type-body-muted {
+    font-family: var(--font-secondary);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.625;
+    opacity: 0.6;
+  }
+
+  /* Subtitles / meta lines */
+  .type-meta {
+    font-family: var(--font-secondary);
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.4;
+    opacity: 0.6;
+  }
+}

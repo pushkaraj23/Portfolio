@@ -68,22 +68,19 @@ export default function About() {
   ];
 
   return (
-    <div className="w-full px-5 pt-24 pb-10 sm:px-8 md:px-10 md:py-10">
-      {/* Header Section */}
-      <section className="flex flex-col gap-4 md:flex-row md:items-end md:gap-10">
-        <div className="flex shrink-0 items-end">
-          <h1 className="font-primary text-accent-two text-[clamp(2.75rem,12vw,15vh)] leading-none font-bold uppercase">
-            About
-          </h1>
-          <h1 className="font-primary text-secondary-two text-[clamp(1.75rem,8vw,10vh)] leading-none font-bold uppercase">
-            Me
-          </h1>
+    <div className="page-shell">
+      {/* Header — matches other pages: title + horizontal rule */}
+      <div className="flex items-end gap-3 sm:gap-5">
+        <div className="flex shrink-0 items-end gap-1">
+          <h1 className="type-page-title text-accent-two">About</h1>
+          <h1 className="type-page-title-sm text-secondary-two">Me</h1>
         </div>
-        <p className="font-secondary text-base opacity-60 md:text-lg">
-          Full stack software engineer (MERN) based in Pune — I&apos;ve shipped 20+ end-to-end
-          products from UI/UX and architecture through frontend, backend and deployment.
-        </p>
-      </section>
+        <div className="bg-accent h-px w-full" />
+      </div>
+      <p className="type-body-muted mt-4 max-w-3xl">
+        Full stack software engineer (MERN) based in Pune — I&apos;ve shipped 20+ end-to-end
+        products from UI/UX and architecture through frontend, backend and deployment.
+      </p>
 
       {/* Introduction Section */}
       <section className="mt-8 flex flex-col gap-6 md:mt-10 md:flex-row md:gap-8">
@@ -97,7 +94,7 @@ export default function About() {
             <div className="bg-primary m h-6 w-2 rounded-full sm:h-8" />
             <h2 className="font-primary text-primary text-lg font-bold sm:text-2xl">How I Got Here</h2>
           </div>
-          <p className="font-secondary text-secondary mt-4 px-1 text-sm text-justify sm:mt-5 sm:px-3 sm:text-base">
+          <p className="type-body text-secondary mt-4 px-1 text-justify sm:mt-5 sm:px-3">
             I&apos;ve always been the kind of person who sees a problem and thinks, &quot;I could
             build something for that.&quot; That habit started with side projects during my B.Tech
             in Computer Science at MIT ADT University, Pune (CGPA 8.22).
@@ -118,7 +115,7 @@ export default function About() {
 
       {/* What I do.section */}
       <div className="mt-12 flex items-end gap-3 sm:gap-5 md:mt-16">
-        <h1 className="font-primary text-accent shrink-0 text-3xl font-bold whitespace-nowrap uppercase sm:text-4xl md:text-6xl">
+        <h1 className="type-section-title text-accent shrink-0 whitespace-nowrap md:text-6xl">
           What I do?
         </h1>
         <div className="bg-accent h-px w-full" />
@@ -126,15 +123,15 @@ export default function About() {
       <section className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 md:mt-10 md:gap-7 lg:grid-cols-3">
         {whatido.map((doc, index) => (
           <div key={index} className="neu-card-dynamic bg-primary rounded-3xl px-5 py-5 sm:rounded-4xl sm:px-7 sm:py-6">
-            <h1 className="font-primary text-accent text-lg font-bold sm:text-xl">{doc.title}</h1>
-            <p className="font-secondary mt-2 text-sm opacity-60 sm:text-base">{doc.description}</p>
+            <h1 className="type-card-title text-accent normal-case">{doc.title}</h1>
+            <p className="type-body-muted mt-2">{doc.description}</p>
           </div>
         ))}
       </section>
 
       {/* Beyond Work Section */}
       <div className="mt-12 flex items-end gap-3 sm:gap-5 md:mt-16">
-        <h1 className="font-primary text-accent shrink-0 text-3xl font-bold whitespace-nowrap uppercase sm:text-4xl md:text-6xl">
+        <h1 className="type-section-title text-accent shrink-0 whitespace-nowrap md:text-6xl">
           Beyond Work?
         </h1>
         <div className="bg-accent h-px w-full" />
@@ -160,7 +157,7 @@ export default function About() {
       </section>
 
       {/* Contact Line */}
-      <h3 className="font-secondary text-accent mt-12 text-base sm:text-xl md:mt-16">
+      <h3 className="type-body text-accent mt-12 opacity-100 md:mt-16">
         Got an idea, a project, or just want to say hi?
       </h3>
       <div className="flex items-end gap-2">

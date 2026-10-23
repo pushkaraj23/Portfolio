@@ -16,12 +16,10 @@ export default function EducationPage() {
   ];
 
   return (
-    <div className="px-5 pt-24 pb-10 sm:px-8 md:px-10 md:py-8">
+    <div className="page-shell">
       {/* Header */}
       <div className="flex items-end gap-3 sm:gap-5">
-        <h1 className="font-primary text-accent shrink-0 text-[clamp(2.25rem,9vw,15vh)] leading-none font-bold uppercase">
-          Education
-        </h1>
+        <h1 className="type-page-title text-accent shrink-0">Education</h1>
         <div className="bg-accent h-px w-full" />
       </div>
 
@@ -48,10 +46,8 @@ export default function EducationPage() {
             {/* Second Column */}
             <div className="neu-card flex h-fit flex-col rounded-3xl p-4 sm:rounded-4xl sm:p-7 md:col-span-2">
               <div className="neu-card rounded-3xl px-4 py-4 sm:rounded-4xl sm:px-7 sm:py-5">
-                <h1 className="font-primary text-accent text-base font-bold uppercase sm:text-xl">
-                  {item.degree}
-                </h1>
-                <p className="font-secondary text-sm opacity-60 sm:text-base">{item.institution}</p>
+                <h1 className="type-card-title text-accent">{item.degree}</h1>
+                <p className="type-meta mt-1">{item.institution}</p>
                 <div className="mt-3 flex flex-wrap gap-2 sm:gap-3">
                   <button className="bg-accent text-primary font-primary rounded-full px-3 py-1.5 text-xs font-bold sm:px-4 sm:py-2 sm:text-sm">
                     {item.score}
@@ -61,7 +57,7 @@ export default function EducationPage() {
                   </button>
                 </div>
               </div>
-              <p className="font-secondary mt-4 px-1 text-sm text-justify font-light opacity-60 sm:mt-5 sm:px-3 sm:text-base">
+              <p className="type-body-muted mt-4 px-1 text-justify sm:mt-5 sm:px-3">
                 {item.description}
               </p>
             </div>

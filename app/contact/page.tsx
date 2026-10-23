@@ -33,12 +33,10 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="px-5 pt-24 pb-10 sm:px-8 md:px-10 md:py-8">
+    <div className="page-shell">
       {/* Header */}
       <div className="flex items-end gap-3 sm:gap-5">
-        <h1 className="font-primary text-accent shrink-0 text-[clamp(2.25rem,9vw,15vh)] leading-none font-bold uppercase">
-          Reach Out
-        </h1>
+        <h1 className="type-page-title text-accent shrink-0">Reach Out</h1>
         <div className="bg-accent h-px w-full" />
       </div>
 
@@ -47,9 +45,7 @@ export default function ContactPage() {
         onSubmit={handleSubmit}
         className="neu-card bg-primary mt-8 rounded-3xl p-5 sm:mt-10 sm:rounded-4xl sm:p-8 md:p-10"
       >
-        <h2 className="font-secondary text-accent text-xl font-semibold sm:text-2xl">
-          Leave me a Message?
-        </h2>
+        <h2 className="font-secondary text-accent text-xl font-semibold">Leave me a Message?</h2>
 
         <div className="mt-6 grid gap-6 sm:mt-8 sm:gap-8 md:grid-cols-2">
           {/* Left: inputs */}

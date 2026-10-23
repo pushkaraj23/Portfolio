@@ -53,12 +53,10 @@ export default function AchievementsPage() {
   ];
 
   return (
-    <div className="px-5 pt-24 pb-10 sm:px-8 md:px-10 md:py-8">
+    <div className="page-shell">
       {/* Header */}
       <div className="flex items-end gap-3 sm:gap-5">
-        <h1 className="font-primary text-accent shrink-0 text-[clamp(1.85rem,8vw,15vh)] leading-none font-bold uppercase">
-          Achievements
-        </h1>
+        <h1 className="type-page-title text-accent shrink-0">Achievements</h1>
         <div className="bg-accent h-px w-full" />
       </div>
 
@@ -77,8 +75,8 @@ export default function AchievementsPage() {
               <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
               <div className="absolute inset-0 h-full w-full bg-linear-to-b from-primary/0 to-primary" />
               <div className="absolute bottom-0 left-0 w-full px-4 py-4 sm:px-5 sm:py-5">
-                <h1 className="font-primary text-accent text-lg font-bold sm:text-2xl">{item.title}</h1>
-                <h3 className="font-secondary text-sm opacity-60 sm:text-base">{item.subtitle}</h3>
+                <h1 className="type-card-title text-accent normal-case">{item.title}</h1>
+                <h3 className="type-meta mt-1">{item.subtitle}</h3>
               </div>
             </div>
             <div className="flex flex-col justify-center px-1 sm:px-5">
@@ -86,7 +84,7 @@ export default function AchievementsPage() {
                 {item.points.map((point, pointIndex) => (
                   <li
                     key={pointIndex}
-                    className="font-secondary list-disc text-sm text-justify font-light opacity-60 sm:text-lg"
+                    className="type-body-muted list-disc text-justify"
                   >
                     {point}
                   </li>

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       {/* Mobile: fit visible browser viewport (svh). Desktop: normal flow. */}
-      <div className="relative flex min-h-svh flex-col overflow-visible px-5 pt-[max(5.5rem,calc(env(safe-area-inset-top)+4.5rem))] pb-[env(safe-area-inset-bottom)] sm:px-8 md:min-h-full md:px-6 md:pt-6 md:pb-5 lg:px-10">
+      <div className="relative flex min-h-svh flex-col overflow-visible px-5 pt-[max(6rem,calc(env(safe-area-inset-top)+4.5rem))] pb-[max(2.5rem,env(safe-area-inset-bottom))] sm:px-8 md:min-h-full md:px-10 md:pt-8 md:pb-8">
         {/* Name block — behind hero photo on desktop */}
         <div className="relative z-10 max-w-full overflow-visible pb-1 md:z-[2] md:pb-10">
           <h1 className="font-primary text-accent-two text-[clamp(3rem,15vw,25vh)] leading-[0.92] font-bold uppercase sm:text-[clamp(3.5rem,15vw,25vh)]">
@@ -29,7 +29,7 @@ export default function Home() {
             <h1 className="font-italic mb-1.5 text-[clamp(1.85rem,5.5vw,8vh)] leading-none sm:mb-3">
               Hello There
             </h1>
-            <p className="font-secondary text-base font-light sm:text-lg md:text-base lg:text-[clamp(0.95rem,2.5vh,1.25rem)]">
+            <p className="type-body-muted">
               Software Development Engineer &amp; Co-Founder — full stack (MERN) with 20+ products
               shipped end-to-end, from UI/UX and architecture to production.
             </p>
