@@ -35,13 +35,14 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="bg-primary neu-button fixed top-5 right-22 z-50 w-20 overflow-hidden rounded-full p-2 hover:cursor-pointer"
+      aria-label="Toggle theme"
+      className="bg-primary neu-button fixed top-4 right-[4.25rem] z-50 w-16 overflow-hidden rounded-full p-1.5 hover:cursor-pointer sm:top-5 sm:right-22 sm:w-20 sm:p-2"
     >
       <div
-        className={`bg-accent w-fit rounded-full p-2 transition-transform duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] ${isDark ? "translate-x-6" : "translate-x-0"}`}
+        className={`bg-accent w-fit rounded-full p-1.5 transition-transform duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] sm:p-2 ${isDark ? "translate-x-5 sm:translate-x-6" : "translate-x-0"}`}
       >
-        {isDark && <Moon />}
-        {!isDark && <Sun />}
+        {isDark && <Moon className="h-5 w-5 sm:h-6 sm:w-6" />}
+        {!isDark && <Sun className="h-5 w-5 sm:h-6 sm:w-6" />}
       </div>
     </button>
   );

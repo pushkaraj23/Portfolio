@@ -1,7 +1,6 @@
 "use client";
 
 export default function ExperiencePage() {
-
   const experience = [
     {
       title: "Frontend Developer Intern",
@@ -32,42 +31,58 @@ export default function ExperiencePage() {
     },
   ];
 
-  return <div className="px-10 py-8">
-    {/* Header */}
-    <div className="flex items-end gap-5">
-      <h1 className="uppercase font-primary text-accent text-[15vh] leading-[15vh] font-bold whitespace-nowrap">Experience</h1>
-      <div className="h-px w-full bg-accent" />
-    </div>
+  return (
+    <div className="px-5 pt-24 pb-10 sm:px-8 md:px-10 md:py-8">
+      {/* Header */}
+      <div className="flex items-end gap-3 sm:gap-5">
+        <h1 className="font-primary text-accent shrink-0 text-[clamp(2.25rem,9vw,15vh)] leading-none font-bold uppercase">
+          Experience
+        </h1>
+        <div className="bg-accent h-px w-full" />
+      </div>
 
-    {/* Page Content */}
-    <section className="mt-12 grid grid-cols-1 gap-10">
-      {experience.map((doc, index) => (
-        <section key={index} className={`neu-card rounded-4xl p-7 flex gap-7 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
-          {/* image section */}
-          <img src={doc.image} alt={doc.title} className="rounded-4xl h-[70vh] min-w-[35vw] object-cover" />
-          {/* description section */}
-          <div className="flex flex-col gap-6 w-full">
-
-            <div className="relative overflow-hidden flex gap-4 neu-card rounded-4xl py-5 pb-7 px-7 w-full">
-              <div className="bg-accent h-full w-2 rounded-full neu-accent" />
-              <div>
-                <h1 className="text-accent font-primary text-2xl font-semibold uppercase">{doc.title}</h1>
-                <p className="font-secondary text-sm opacity-60 uppercase">{doc.organization}</p>
+      {/* Page Content */}
+      <section className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:gap-8 md:mt-12 md:gap-10">
+        {experience.map((doc, index) => (
+          <section
+            key={index}
+            className={`neu-card flex flex-col gap-5 rounded-3xl p-4 sm:gap-6 sm:rounded-4xl sm:p-6 md:gap-7 md:p-7 lg:flex-row ${
+              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+            }`}
+          >
+            {/* image section */}
+            <img
+              src={doc.image}
+              alt={doc.title}
+              className="h-[32vh] w-full rounded-3xl object-cover sm:h-[40vh] sm:rounded-4xl md:h-[50vh] lg:h-[70vh] lg:min-w-[35vw] lg:w-[35vw]"
+            />
+            {/* description section */}
+            <div className="flex w-full flex-col gap-4 sm:gap-6">
+              <div className="neu-card relative flex w-full gap-3 overflow-hidden rounded-3xl px-4 py-4 pb-10 sm:gap-4 sm:rounded-4xl sm:px-7 sm:py-5 sm:pb-7">
+                <div className="bg-accent neu-accent h-auto min-h-full w-1.5 shrink-0 rounded-full sm:w-2" />
+                <div className="min-w-0 pr-2">
+                  <h1 className="font-primary text-accent text-lg font-semibold uppercase sm:text-2xl">
+                    {doc.title}
+                  </h1>
+                  <p className="font-secondary text-xs uppercase opacity-60 sm:text-sm">
+                    {doc.organization}
+                  </p>
+                </div>
+                <div className="bg-secondary-two text-accent font-secondary absolute right-0 bottom-0 rounded-tl-3xl px-3 py-1.5 text-xs sm:rounded-tl-4xl sm:px-5 sm:py-2 sm:text-sm">
+                  {doc.from} - {doc.until}
+                </div>
               </div>
-              <div className="bg-secondary-two absolute right-0 bottom-0 rounded-tl-4xl px-5 py-2 font-secondary text-accent text-sm">{doc.from} - {doc.until}</div>
+
+              <div className="neu-card-inverse h-full rounded-3xl p-4 sm:rounded-4xl sm:p-6">
+                <p
+                  className="font-secondary text-xs whitespace-pre-wrap opacity-60 sm:text-sm"
+                  dangerouslySetInnerHTML={{ __html: doc.description }}
+                />
+              </div>
             </div>
-
-            <div className="rounded-4xl neu-card-inverse p-6 h-full">
-              <p
-                className="font-secondary opacity-60 text-sm whitespace-pre-wrap"
-                dangerouslySetInnerHTML={{ __html: doc.description }}
-              />
-            </div>
-
-          </div>
-        </section>
-      ))}
-    </section>
-
-  </div>;
+          </section>
+        ))}
+      </section>
+    </div>
+  );
 }

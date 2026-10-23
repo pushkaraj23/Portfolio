@@ -45,30 +45,51 @@ function SkillRow({ doc, index }: { doc: Category; index: number }) {
     <div
       onMouseEnter={start}
       onMouseLeave={handleLeave}
-      className={`flex items-center gap-4 ${even ? "bg-primary neu-card flex-row" : "bg-accent neu-accent flex-row-reverse"} rounded-4xl px-8 py-5`}
+      onTouchStart={start}
+      onTouchEnd={handleLeave}
+      className={`flex flex-col gap-4 rounded-3xl px-4 py-4 sm:rounded-4xl sm:px-6 sm:py-5 md:flex-row md:items-center md:gap-4 md:px-8 ${
+        even ? "bg-primary neu-card md:flex-row" : "bg-accent neu-accent md:flex-row-reverse"
+      }`}
     >
-      <div className={`font-primary font-bold uppercase px-8 py-6 whitespace-nowrap neu-card rounded-4xl ${even ? "text-accent" : "text-primary"}`}>
+      <div
+        className={`font-primary shrink-0 rounded-3xl px-5 py-4 text-center text-sm font-bold whitespace-nowrap uppercase sm:rounded-4xl sm:px-8 sm:py-6 sm:text-base neu-card ${
+          even ? "text-accent" : "text-primary"
+        }`}
+      >
         {doc.category}
       </div>
-      <div className={`h-full w-0.5 rounded-full ${even ? "bg-accent" : "bg-primary"}`} />
+      <div
+        className={`hidden h-full w-0.5 rounded-full md:block ${even ? "bg-accent" : "bg-primary"}`}
+      />
+      <div className={`h-px w-full rounded-full md:hidden ${even ? "bg-accent/40" : "bg-primary/40"}`} />
 
-      <div className="relative flex w-full overflow-hidden">
-        <div ref={scrollRef} className="flex w-full h-full overflow-x-scroll hide-scrollbar gap-12">
+      <div className="relative flex w-full min-w-0 overflow-hidden">
+        <div
+          ref={scrollRef}
+          className="hide-scrollbar flex h-full w-full gap-8 overflow-x-scroll sm:gap-12"
+        >
           {doc.items.map((item) => (
-            <div key={item.name} className="flex flex-col justify-center items-center gap-3">
-              <img src={item.image} alt={item.name} className="min-w-12 h-12 object-cover" />
-              <p className={`${even ? "text-accent" : "text-primary"} font-secondary whitespace-nowrap`}>{item.name}</p>
+            <div key={item.name} className="flex flex-col items-center justify-center gap-2 sm:gap-3">
+              <img src={item.image} alt={item.name} className="h-10 min-w-10 object-cover sm:h-12 sm:min-w-12" />
+              <p
+                className={`${even ? "text-accent" : "text-primary"} font-secondary text-xs whitespace-nowrap sm:text-base`}
+              >
+                {item.name}
+              </p>
             </div>
           ))}
         </div>
-        <div className={`h-full min-w-40 bg-linear-to-l ${even ? "from-primary to-primary/0" : "from-accent to-accent/0"} absolute right-0 pointer-events-none`} />
+        <div
+          className={`pointer-events-none absolute right-0 h-full min-w-16 bg-linear-to-l sm:min-w-40 ${
+            even ? "from-primary to-primary/0" : "from-accent to-accent/0"
+          }`}
+        />
       </div>
     </div>
   );
 }
 
 export default function SkillsPage() {
-
   const skills = [
     {
       category: "Full Stack",
@@ -130,18 +151,22 @@ export default function SkillsPage() {
     },
   ];
 
-  return <div className="px-10 py-8">
-    {/* Header */}
-    <div className="flex items-end gap-5">
-      <h1 className="uppercase font-primary text-accent text-[15vh] leading-[15vh] font-bold whitespace-nowrap">Skills</h1>
-      <div className="h-px w-full bg-accent" />
-    </div>
+  return (
+    <div className="px-5 pt-24 pb-10 sm:px-8 md:px-10 md:py-8">
+      {/* Header */}
+      <div className="flex items-end gap-3 sm:gap-5">
+        <h1 className="font-primary text-accent shrink-0 text-[clamp(2.75rem,12vw,15vh)] leading-none font-bold uppercase">
+          Skills
+        </h1>
+        <div className="bg-accent h-px w-full" />
+      </div>
 
-    {/* Page Content */}
-    <section className="grid grid-cols-1 gap-10 mt-12">
-      {skills.map((doc, index) => (
-        <SkillRow key={doc.category} doc={doc} index={index} />
-      ))}
-    </section>
-  </ div>;
+      {/* Page Content */}
+      <section className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:gap-8 md:mt-12 md:gap-10">
+        {skills.map((doc, index) => (
+          <SkillRow key={doc.category} doc={doc} index={index} />
+        ))}
+      </section>
+    </div>
+  );
 }
