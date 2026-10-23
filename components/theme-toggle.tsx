@@ -36,7 +36,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="bg-primary neu-button fixed top-4 right-[4.25rem] z-50 w-16 overflow-hidden rounded-full p-1.5 hover:cursor-pointer sm:top-5 sm:right-22 sm:w-20 sm:p-2"
+      className="bg-primary neu-button fixed top-[max(1rem,env(safe-area-inset-top))] right-[4.25rem] z-50 w-16 overflow-hidden rounded-full p-1.5 hover:cursor-pointer sm:top-5 sm:right-22 sm:w-20 sm:p-2"
     >
       <div
         className={`bg-accent w-fit rounded-full p-1.5 transition-transform duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] sm:p-2 ${isDark ? "translate-x-5 sm:translate-x-6" : "translate-x-0"}`}

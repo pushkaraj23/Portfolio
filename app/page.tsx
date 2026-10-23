@@ -4,7 +4,8 @@ import { FaLinkedinIn, FaInstagram } from "react-icons/fa6";
 export default function Home() {
   return (
     <>
-      <div className="relative flex min-h-full flex-col overflow-visible px-5 pt-24 pb-8 sm:px-8 md:px-6 md:pt-6 md:pb-5 lg:px-10">
+      {/* Mobile: fit visible browser viewport (svh). Desktop: normal flow. */}
+      <div className="relative flex min-h-svh flex-col overflow-visible px-5 pt-[max(5.5rem,calc(env(safe-area-inset-top)+4.5rem))] pb-[env(safe-area-inset-bottom)] sm:px-8 md:min-h-full md:px-6 md:pt-6 md:pb-5 lg:px-10">
         {/* Name block — behind hero photo on desktop */}
         <div className="relative z-10 max-w-full overflow-visible pb-1 md:z-[2] md:pb-10">
           <h1 className="font-primary text-accent-two text-[clamp(3rem,15vw,25vh)] leading-[0.92] font-bold uppercase sm:text-[clamp(3.5rem,15vw,25vh)]">
@@ -80,16 +81,16 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Desktop / tablet background graphics */}
+      {/* Wave + photo — bottom aligned to visible viewport (svh/dvh + safe area) */}
       <img
         src="/graphics/home-bg-wave.svg"
         alt=""
         aria-hidden
-        className="pointer-events-none fixed right-0 bottom-0 z-0 h-auto w-full md:w-[62vw]"
+        className="pointer-events-none fixed right-0 bottom-[env(safe-area-inset-bottom)] z-0 h-auto w-full md:w-[62vw]"
       />
       <img
         src="/graphics/hero-image.png"
-        className="pointer-events-none fixed right-20 bottom-0 z-[8] h-[50vh] w-auto md:max-w-[50vw] object-contain object-bottom md:right-12 lg:h-[85vh]"
+        className="pointer-events-none fixed right-20 bottom-[env(safe-area-inset-bottom)] z-[8] h-[min(58svh,52dvh)] w-auto object-contain object-bottom md:right-12 md:h-[75vh] md:max-w-[50vw] lg:h-[85vh]"
         alt="Pushkaraj"
       />
     </>

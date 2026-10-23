@@ -21,7 +21,7 @@ export default function SideBar() {
     };
 
     return (
-        <div className="fixed top-0 right-0 z-30 flex h-screen">
+        <div className="fixed top-0 right-0 z-30 flex h-dvh pb-[env(safe-area-inset-bottom)]">
             {/* Gradient Line */}
             <div className="h-full w-px bg-linear-to-b from-white/60 to-white/0" />
 
