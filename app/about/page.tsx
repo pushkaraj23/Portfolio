@@ -80,8 +80,8 @@ export default function About() {
           </h1>
         </div>
         <p className="font-secondary text-base opacity-60 md:text-lg">
-          Hey, I&apos;m Pushkaraj. I love building products and figuring out how to turn ideas into
-          real businesses. Right now I&apos;m doing exactly that as a developer and co-founder.
+          Full stack software engineer (MERN) based in Pune — I&apos;ve shipped 20+ end-to-end
+          products from UI/UX and architecture through frontend, backend and deployment.
         </p>
       </section>
 
@@ -99,17 +99,19 @@ export default function About() {
           </div>
           <p className="font-secondary text-secondary mt-4 px-1 text-sm text-justify sm:mt-5 sm:px-3 sm:text-base">
             I&apos;ve always been the kind of person who sees a problem and thinks, &quot;I could
-            build something for that.&quot; That habit started with small side projects during
-            college, where I was studying Computer Science with a focus on AI.
+            build something for that.&quot; That habit started with side projects during my B.Tech
+            in Computer Science at MIT ADT University, Pune (CGPA 8.22).
             <br />
             <br />
-            Somewhere along the way, I realized I enjoyed the whole journey more than just the code:
-            the idea, the late-night building, the first user, the feedback that stings a little.
-            That&apos;s what pulled me toward entrepreneurship.
+            I care about the whole journey — concept, UI/UX, architecture, code, deployment and
+            scale — not just the happy path in a demo. That ownership mindset is what pulled me into
+            founding and shipping real products for clients.
             <br />
             <br />
-            Today, I&apos;m a software engineer and co-founder at Fibonce Tech Solutions, building
-            products for clients across the globe and learning something new every week.
+            Today I&apos;m a Software Development Engineer and Co-Founder at Fibonce Tech Solutions,
+            where we&apos;ve launched an e-commerce platform that made ₹50,000+ on day one, an ERP
+            serving 50,000+ requests/day, and 20+ production systems for clients across India,
+            Australia and the UK.
           </p>
         </div>
       </section>

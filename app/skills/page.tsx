@@ -45,14 +45,12 @@ function SkillRow({ doc, index }: { doc: Category; index: number }) {
     <div
       onMouseEnter={start}
       onMouseLeave={handleLeave}
-      onTouchStart={start}
-      onTouchEnd={handleLeave}
-      className={`flex flex-col gap-4 rounded-3xl px-4 py-4 sm:rounded-4xl sm:px-6 sm:py-5 md:flex-row md:items-center md:gap-4 md:px-8 ${
+      className={`flex flex-col gap-5 rounded-3xl px-5 py-5 sm:rounded-4xl sm:px-6 sm:py-6 md:flex-row md:items-center md:gap-4 md:px-8 md:py-5 ${
         even ? "bg-primary neu-card md:flex-row" : "bg-accent neu-accent md:flex-row-reverse"
       }`}
     >
       <div
-        className={`font-primary shrink-0 rounded-3xl px-5 py-4 text-center text-sm font-bold whitespace-nowrap uppercase sm:rounded-4xl sm:px-8 sm:py-6 sm:text-base neu-card ${
+        className={`font-primary neu-card shrink-0 rounded-3xl px-5 py-4 text-center text-xl font-bold whitespace-nowrap uppercase sm:rounded-4xl sm:px-8 sm:py-5 sm:text-2xl md:py-6 md:text-base ${
           even ? "text-accent" : "text-primary"
         }`}
       >
@@ -63,16 +61,31 @@ function SkillRow({ doc, index }: { doc: Category; index: number }) {
       />
       <div className={`h-px w-full rounded-full md:hidden ${even ? "bg-accent/40" : "bg-primary/40"}`} />
 
-      <div className="relative flex w-full min-w-0 overflow-hidden">
+      {/* Phone: static grid */}
+      <div className="grid w-full grid-cols-3 gap-x-3 gap-y-5 px-1 pb-1 sm:grid-cols-4 md:hidden">
+        {doc.items.map((item) => (
+          <div key={item.name} className="flex flex-col items-center justify-start gap-2 text-center">
+            <img src={item.image} alt={item.name} className="h-10 w-10 object-contain" />
+            <p
+              className={`${even ? "text-accent" : "text-primary"} font-secondary text-[11px] leading-tight`}
+            >
+              {item.name}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: horizontal scroll row (unchanged) */}
+      <div className="relative hidden w-full min-w-0 overflow-hidden md:flex">
         <div
           ref={scrollRef}
-          className="hide-scrollbar flex h-full w-full gap-8 overflow-x-scroll sm:gap-12"
+          className="hide-scrollbar flex h-full w-full gap-12 overflow-x-scroll"
         >
           {doc.items.map((item) => (
-            <div key={item.name} className="flex flex-col items-center justify-center gap-2 sm:gap-3">
-              <img src={item.image} alt={item.name} className="h-10 min-w-10 object-cover sm:h-12 sm:min-w-12" />
+            <div key={item.name} className="flex flex-col items-center justify-center gap-3">
+              <img src={item.image} alt={item.name} className="h-12 min-w-12 object-cover" />
               <p
-                className={`${even ? "text-accent" : "text-primary"} font-secondary text-xs whitespace-nowrap sm:text-base`}
+                className={`${even ? "text-accent" : "text-primary"} font-secondary whitespace-nowrap`}
               >
                 {item.name}
               </p>
@@ -80,7 +93,7 @@ function SkillRow({ doc, index }: { doc: Category; index: number }) {
           ))}
         </div>
         <div
-          className={`pointer-events-none absolute right-0 h-full min-w-16 bg-linear-to-l sm:min-w-40 ${
+          className={`pointer-events-none absolute right-0 h-full min-w-40 bg-linear-to-l ${
             even ? "from-primary to-primary/0" : "from-accent to-accent/0"
           }`}
         />
@@ -146,6 +159,7 @@ export default function SkillsPage() {
         { name: "CI/CD", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
         { name: "Figma", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
         { name: "Postman", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+        { name: "Azure", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
         { name: "ML Fundamentals", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
       ],
     },

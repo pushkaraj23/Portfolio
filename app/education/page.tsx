@@ -6,34 +6,12 @@ export default function EducationPage() {
       id: "1",
       image:
         "https://collegewollege.com/_next/image?url=https%3A%2F%2Fcdn.collegewollege.com%2Fstorage%2Fcolleges%2Fbranding%2Fxw5l9JMPMpVkxZ7DUXiJkiiiedDUO4p1g7DxfBkP.webp&w=3840&q=60",
-      degree: "Bachelor of Technology, Computer Science & Engineering",
-      institution: "MIT Art, Design and Technology University, Pune",
-      period: "2021 - 2025",
-      score: "Score: 8.22 CGPA",
+      degree: "B.Tech in Computer Science and Engineering",
+      institution: "MIT ADT University, Pune, India",
+      period: "Oct 2021 – May 2025",
+      score: "CGPA: 8.22/10",
       description:
-        "Specialised in Artificial Intelligence and Analytics, with coursework in machine learning, data structures, databases and software engineering. Built full-stack and ML projects alongside coursework and shipped client work while still studying.",
-    },
-    {
-      id: "2",
-      image:
-        "https://content.jdmagicbox.com/v2/comp/mumbai/b7/022pxx22.xx22.240720105957.w2b7/catalogue/rao-junior-college-of-science-sakinaka-mumbai-junior-colleges-e89w3r4ufg.jpg",
-      degree: "Higher Secondary Certificate (12th), Science",
-      institution: "Your Junior College Name, Pune",
-      period: "2019 - 2021",
-      score: "Score: 00.00%",
-      description:
-        "Completed the science stream with a focus on physics, chemistry and mathematics, and picked up programming fundamentals that led into a computer science degree.",
-    },
-    {
-      id: "3",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsfQZR24GuAuxRA_UcU_-Mk_aFK-WPPMzgG7z38SWNVw&s=10",
-      degree: "Secondary School Certificate (10th)",
-      institution: "Your School Name, Pune",
-      period: "2018 - 2019",
-      score: "Score: 00.00%",
-      description:
-        "Completed secondary schooling with strong results in mathematics and science.",
+        "Completed a B.Tech in Computer Science and Engineering while shipping full-stack and ML projects alongside coursework — including client production systems, a crop-disease detection app, and hackathon builds in predictive health.",
     },
   ];
 
